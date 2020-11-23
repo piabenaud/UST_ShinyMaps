@@ -44,7 +44,7 @@ output$timeline <- renderPlot({
     geom_point(colour = "#f4a261", size = 4) +
     geom_vline(aes(xintercept = as.Date(today)), colour = "#2a9d8f", alpha = 0.5, size = 2) +
     labs(x = "Project Timeline", y = "Catchment") +
-    #scale_x_date(date_breaks = "1 year") +
+    scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
     theme_classic() + 
     theme(axis.title = element_text(size = 10.5, colour = "gray20"),
           plot.title = element_text(colour = "gray20", size = 12, face = "bold"))
