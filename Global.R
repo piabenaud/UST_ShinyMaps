@@ -10,11 +10,16 @@
 library(dplyr)
 library(readr)
 library(rgdal) # for reading shp files because I couldn't get sf to install...
-#library(raster) # for binding shp files
+library(lubridate)
 
 # Import table with site info ---------------------------------------------
 
 Delivery <- read_csv("Data/Catchment_details.csv")
+
+Delivery <- Delivery %>% 
+  mutate('Project_Start'= dmy(Project_Start),
+         'Project_End' = dmy(Project_End)) # convert date time to useful format 
+  
 
 # Import catchment shapefiles ---------------------------------------------
 
@@ -50,3 +55,6 @@ vars <- c("Catchment Type" = "Type",
           "Catchment Lead" = "Lead",
           "Catchment Group" = "Group") 
 
+
+
+today <- lubridate::now(tzone = "UTC")

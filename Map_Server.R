@@ -34,11 +34,22 @@ popups <- paste0("<h3>",Catchments$WB_NAME,"</h3>", "<br>",
 
 # add wtw info
 
-# Let's make a reactive timeline plot -------------------------------------
+# Let's make a timeline plot -------------------------------------
 
-# to do
+# Could make this reactive in the future - i.e. as you zoom change to catchments in view
+
+output$timeline <- renderPlot({
+  ggplot(data = Catchments@data, aes(x = Project_End, y = WB_NAME)) +
+    geom_segment(aes(x = Project_Start, xend = Project_End, y = WB_NAME, yend = WB_NAME), colour = "#264653") +
+    geom_point(colour = "#f4a261", size = 4) +
+    geom_vline(aes(xintercept = as.Date(today)), colour = "#2a9d8f", alpha = 0.5, size = 2) +
+    labs(x = "Project Timeline", y = "Catchment") +
+    #scale_x_date(date_breaks = "1 year") +
+    theme_classic() + 
+    theme(axis.title = element_text(size = 10.5, colour = "gray20"),
+          plot.title = element_text(colour = "gray20", size = 12, face = "bold"))
+})
   
-
 
 # Let's define the cols and bring it all together -------------------------
 
