@@ -16,10 +16,11 @@
                     
                     h3("Colour controller"),
                     
-                    selectInput("colour_investigation", "Investigation colour", vars),
-                    selectInput("colour_scheme", "Scheme colour", vars),
-                    selectInput("colour_BAU", "BAU colour", vars)
+                    selectInput("colour", "Colour Coding", vars)
                     
+                    #h3("Project timeline")
+                    
+                    #plotOutput("timeline", height = 300)
                     
       )
   )

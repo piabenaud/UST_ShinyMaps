@@ -9,51 +9,69 @@
 
 output$map <- renderLeaflet({
   leaflet() %>%  
-    setView(lng = -1.542, lat = 54.992, zoom = 6) %>% 
+    setView(lng = -3.812, lat = 50.801, zoom = 9) %>% 
     addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Colour") %>%
     addProviderTiles(providers$Esri.WorldImagery,
                      options = providerTileOptions(opacity = 0.3), group = "Colour") %>% 
-    addProviderTiles(providers$Esri.WorldShadedRelief, group = "Topography") %>% 
-    addProviderTiles(providers$Esri.World, group = "Grey-scale")
+    addProviderTiles(providers$Esri.WorldGrayCanvas, group = "Gray-scale")
 })
 
-
-# Let's define the colour palettes ----------------------------------------
-
-observe({
-  colorBy_low <- input$colour_low
-  colorBy_up <- input$colour_up
-  
-  if (colorBy_low == "Rslt_Analysis") {
-    colorData_low <- erosiondata_lowland$Rslt_Analysis
-    pal <- colorBin(c("black", "#74add1", "#4575b4","#313695"), domain = colorData_low, bins = c(0,0.01,1,10,100), na.color = NA)
-  } else {
-    colorData_low <- erosiondata_lowland[[colorBy_low]]
-    pal <- colorFactor(c("#440154FF", "#31688EFF", "#35B779FF","#FDE725FF"), colorData_low)
-  }
-  
-  if (colorBy_up == "Rslt_Analysis") {
-    colorData_up <- erosiondata_upland$Rslt_Analysis
-    pal2 <- colorBin(c("black", "#ffffbf", "#fdae61", "#f46d43", "#a50026"), colorData_up, c(0.000,0.01,1,10,100, 10000), pretty = FALSE, na.color = NA)
-  } else {
-    colorData_up <- erosiondata_upland[[colorBy_up]]
-    pal2 <- colorFactor(c("#440154FF", "#31688EFF", "#35B779FF","#FDE725FF"), colorData_up)
-  }
 
 
 # Let's add some popups ---------------------------------------------------
 
-popups <- paste0("<b>","Land Cover: ","</b>", erosiondata_upland$Land_cover, "<br>",
-                   "<b>","Study ID: ","</b>", erosiondata_upland$Site_ID, "<br>",
-                   "<b>","Study Start: ","</b>", htmlEscape(erosiondata_upland$Stdy_Start), "<br>",
-                   "<b>","Study Finish: ","</b>", htmlEscape(erosiondata_upland$Stdy_Fin), "<br>",
-                   "<b>","Site selection: ","</b>", erosiondata_upland$Site_selection, "<br>",
-                   "<b>","County: ","</b>", erosiondata_upland$County_Dis, "<br>")
+popups <- paste0("<h3>",Catchments$WB_NAME,"</h3>", "<br>",
+                 "<b>","Type: ","</b>", Catchments$Type, "<br>",
+                 "<b>","Risk: ","</b>", Catchments$Risk, "<br>",
+                 "<b>","Lead: ","</b>", Catchments$Lead, "<br>",
+                 "<b>","Team: ","</b>", Catchments$Team, "<br>",
+                 "<b>","Partners: ","</b>", Catchments$Partners, "<br>",
+                 "<b>","Sondes: ","</b>", Catchments$Sondes, "<br>",
+                 "<b>","Pumps: ","</b>", Catchments$Pumps, "<br>",
+                 "<b>","Flow: ","</b>", Catchments$Flow, "<br>",
+                 "<b>","Stage: ","</b>", Catchments$Stage, "<br>"
+                 )
+
+# add wtw info
+
+# Let's make a reactive timeline plot -------------------------------------
+
+# to do
+  
 
 
-# need to add something to link together shapefiles and popups
+# Let's define the cols and bring it all together -------------------------
 
 
-# Let's pull it all together ----------------------------------------------
+#pal_test <- c("#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51", "#6b8b8d")
 
-
+observe({
+  colour_by <- input$colour # First defining the colour palettes for the input (on ui) 'colour'
+  
+  if (colour_by == "Type") {
+    colour_group <- Catchments$Type
+    pal <- colorFactor( palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = colour_group)
+    
+  } else if (colour_by == "Lead") {
+    colour_group <- Catchments[[colour_by]]
+    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a"), domain= colour_group)
+    
+  } else {
+    colour_group <- Catchments[[colour_by]] # i.e. Catchment Group
+    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3"), domain= colour_group)
+  }
+  
+  
+  leafletProxy("map") %>%  # Then adding it all to the map
+    clearShapes() %>%
+    addPolygons(data = Catchments, group = "Catchments", fillOpacity = 0.8, weight = 0.8, color = pal(colour_group), popup = popups) %>%
+    #addCircles(data = erosiondata_lowland, group = "Lowland", ~Long, ~Lat, radius = rad_low, layerId=~Site_ID,  # add something like this later for point-based data
+    #           stroke=FALSE, fillOpacity=0.65, fillColor=pal(colorData_low), popup = popup_low) %>%
+    addLayersControl(
+      options = layersControlOptions(collapsed = FALSE),
+      #overlayGroups = c("Catchments"),
+      baseGroups = c("Colour", "Gray-scale"),
+      position = "topleft") %>% 
+    addLegend("topleft", pal=pal, values=colour_group, layerId="legend")
+  
+})
