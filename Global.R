@@ -10,6 +10,7 @@
 library(dplyr)
 library(readr)
 library(rgdal) # for reading shp files because I couldn't get sf to install...
+library(raster) # for bind function
 library(lubridate)
 
 # Import table with site info ---------------------------------------------
