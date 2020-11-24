@@ -34,7 +34,7 @@ popups <- paste0("<h3>", Catchments$WB_NAME,"</h3>", "<br>",
                  )
 
 popup_temp <- paste0("<b>",BAU_shp$Catchment,"</b>")
-# add wtw info
+
 
 # Let's make a timeline plot -------------------------------------
 
@@ -45,7 +45,7 @@ output$timeline <- renderPlot({
     geom_segment(aes(x = Project_Start, xend = Project_End, y = WB_NAME, yend = WB_NAME), colour = "#264653") +
     geom_point(colour = "#f4a261", size = 4) +
     geom_vline(aes(xintercept = as.Date(today)), colour = "#2a9d8f", alpha = 0.5, size = 2) +
-    labs(x = "Project Timeline", y = "Catchment") +
+    labs(x = "Year", y = "Catchment") +
     scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
     theme_classic() + 
     theme(axis.title = element_text(size = 10.5, colour = "gray20"),

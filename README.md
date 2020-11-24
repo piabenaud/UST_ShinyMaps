@@ -1,6 +1,8 @@
 # UST_ShinyMaps
 Having trouble keeping up with where we're working? There's an app for that!
 
+![alt text][preview]
+
 This is a really basic map, so please let me know any suggestions for things I can add to make it better...
 
 Current list:
@@ -20,3 +22,5 @@ To do this you will need the following packages, which can be installed by runni
  ```R
  install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2"))
  ```
+
+[preview]: App_Example.jpg
