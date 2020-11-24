@@ -20,7 +20,7 @@ output$map <- renderLeaflet({
 
 # Let's add some popups ---------------------------------------------------
 
-popups <- paste0("<h3>",Catchments$WB_NAME,"</h3>", "<br>",
+popups <- paste0("<h3>", Catchments$WB_NAME,"</h3>", "<br>",
                  "<b>","Type: ","</b>", Catchments$Type, "<br>",
                  "<b>","Risk: ","</b>", Catchments$Risk, "<br>",
                  "<b>","Lead: ","</b>", Catchments$Lead, "<br>",
@@ -32,6 +32,7 @@ popups <- paste0("<h3>",Catchments$WB_NAME,"</h3>", "<br>",
                  "<b>","Stage: ","</b>", Catchments$Stage, "<br>"
                  )
 
+popup_temp <- paste0("<b>",BAU_shp$Catchment,"</b>")
 # add wtw info
 
 # Let's make a timeline plot -------------------------------------
@@ -75,12 +76,13 @@ observe({
   
   leafletProxy("map") %>%  # Then adding it all to the map
     clearShapes() %>%
+    addPolygons(data = BAU_shp, group = "BAU", fillOpacity = 0.5, weight = 0.8, color = "#6b8b8d", popup = popup_temp) %>%
     addPolygons(data = Catchments, group = "Catchments", fillOpacity = 0.8, weight = 0.8, color = pal(colour_group), popup = popups) %>%
     #addCircles(data = erosiondata_lowland, group = "Lowland", ~Long, ~Lat, radius = rad_low, layerId=~Site_ID,  # add something like this later for point-based data
     #           stroke=FALSE, fillOpacity=0.65, fillColor=pal(colorData_low), popup = popup_low) %>%
     addLayersControl(
       options = layersControlOptions(collapsed = FALSE),
-      #overlayGroups = c("Catchments"),
+      overlayGroups = c("Catchments", "BAU"),
       baseGroups = c("Colour", "Gray-scale"),
       position = "topleft") %>% 
     addLegend("topleft", pal=pal, values=colour_group, layerId="legend")

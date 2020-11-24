@@ -32,9 +32,8 @@ Schemes_shp <- spTransform(Schemes_shp, CRS(wgs84))
 Investigations_shp <- readOGR("Data/Catchments/", "New_DrWPA_Investigations")
 Investigations_shp <- spTransform(Investigations_shp, CRS(wgs84))
 
-#BAU_shp <- readOGR("Data/Catchments/", "BAU_UST3_Catchments")
-#BAU_shp <- spTransform(BAU_shp, CRS(wgs84))
-#BAU_shp <- merge(BAU_shp, Delivery, by.x = "Catchments", by.y = "Name")
+BAU_shp <- readOGR("Data/Catchments/", "BAU_UST3_Catchments")
+BAU_shp <- spTransform(BAU_shp, CRS(wgs84))
 
 
 # Merge shapefiles into one -----------------------------------------------
