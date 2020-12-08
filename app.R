@@ -21,13 +21,16 @@ source("Global.R")
 # The User Interface ------------------------------------------------------
 
 ui <- navbarPage("Upstream Thinking 3: UoE Monitoring Catchment", id = 'nav',
-                 tabPanel("The Map", source("Map_UI.R", local = TRUE)))
+                 tabPanel("The Map", source("Map_UI.R", local = TRUE)),
+                 tabPanel("Tavy", source("Tavy_UI.R", local = TRUE))
+                 )
 
 
 # The Server --------------------------------------------------------------
 
 server <- function(input, output, session){
   source("Map_Server.R", local = TRUE)
+  source("Tavy_Server.R", local = TRUE)
 }
 
 

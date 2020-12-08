@@ -57,3 +57,10 @@ vars <- c("Catchment Type" = "Type",
 # Todays date for vline on plot -------------------------------------------
 
 today <- lubridate::now(tzone = "UTC")
+
+
+
+# Tavy locations shapefile import -----------------------------------------
+
+Tavy_locs <- shapefile("Data/Tavy/Tavy_Potential_Mon_Locations.shp")
+Tavy_locs <- spTransform(Tavy_locs, CRS(wgs84))
