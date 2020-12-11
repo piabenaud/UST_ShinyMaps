@@ -11,6 +11,7 @@ library(dplyr)
 library(readr)
 library(raster) # for reading shp files bind function
 library(lubridate)
+library(sp) # for the csv spatial data 
 
 # Import table with site info ---------------------------------------------
 
@@ -20,11 +21,14 @@ Delivery <- Delivery %>%
   mutate('Project_Start'= dmy(Project_Start),
          'Project_End' = dmy(Project_End)) # convert date time to useful format 
 
-# add wtw info
+
+# For projection transformation -------------------------------------------
+ # leaflet basemaps are in WGS84
+
+BNG <- "+init=epsg:27700" # BNG
+wgs84 <- "+init=epsg:4326" # WGS84
 
 # Import catchment shapefiles ---------------------------------------------
-
-wgs84 <- "+init=epsg:4326" # Transform to WGS84 to work with basemap
 
 Schemes_shp <- shapefile("Data/Catchments/New_DrWPA_Catchments.shp")
 Schemes_shp <- spTransform(Schemes_shp, CRS(wgs84))
@@ -59,8 +63,20 @@ vars <- c("Catchment Type" = "Type",
 today <- lubridate::now(tzone = "UTC")
 
 
-
 # Tavy locations shapefile import -----------------------------------------
 
-Tavy_locs <- shapefile("Data/Tavy/Tavy_Potential_Mon_Locations.shp")
-Tavy_locs <- spTransform(Tavy_locs, CRS(wgs84))
+# Tavy_locs <- shapefile("Data/Tavy/Tavy_Potential_Mon_Locations.shp")
+# Tavy_locs <- spTransform(Tavy_locs, CRS(wgs84))
+
+
+# Tavy location csv import ------------------------------------------------
+
+Tavy_locs_BNG <- read_csv("Data/Tavy_PotentialMonitoringSites.csv")
+
+ # create a SpatialPointsDataFrame + convert from BNG to WGS84
+Tavy_locs <- Tavy_locs_BNG %>% 
+  dplyr::select(Easting, Northing) %>% 
+  SpatialPointsDataFrame(., data = Tavy_locs_BNG, proj4string = CRS(BNG)) %>% 
+  spTransform(., CRS(wgs84))
+
+rm(Tavy_locs_BNG)
