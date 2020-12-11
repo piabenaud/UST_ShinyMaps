@@ -4,7 +4,7 @@
 
 tavy_pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = Tavy_locs$Priority)
 
-popup_tavy <- paste0("<b>","Coords: ","</b>", Tavy_locs$Easting,", ", Tavy_locs$Northing, "<br>",
+popup_tavy <- paste0("<b>","Coords: ","</b>", Tavy_locs$Northing,", ", Tavy_locs$Easting, "<br>",
                      "<b>","Description: ","</b>", Tavy_locs$Description, "<br>",
                      "<b>", "River: ", "</b>", Tavy_locs$River,"<br>",
                      "<b>", "Comments: ", "</b>", Tavy_locs$Comments, "<br>",

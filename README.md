@@ -18,5 +18,5 @@ runGitHub( "UST_ShinyMaps", "piabenaud", ref = "main")
 ```
 To do this you will need the following packages, which can be installed by running this code in your R console:
  ```R
- install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2"))
+ install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2", "sp"))
  ```
