@@ -1,7 +1,7 @@
 Goggle#,FID,Description,VisitBy,Comments,SpotMon,ContMon,River,Priority,Easting,Northing,MonType
 1,0,Lopwell Dam,NG/PB,Acess to compound required for continuous monitoring - security clearly and issue,Y,Y,River Tavy,1,247464,64990,1
-2,1,Denham Bridge,, ,,,Lower River Tavy,1,247689,67875,1
-3,2,Denham Lodge Weir,, ,,,Lower River Tavy,1,247636,68177,2
+2,1,Denham Bridge,EGC,Massive river,Y,N,Lower River Tavy,1,247689,67875,1
+3,2,Denham Lodge Weir,EGC,Could not access - private garden,UK,UK,Lower River Tavy,1,247636,68177,2
 4,3,Grenofen Bridge,, ,,,River Walkham,1,249002,70975,1
 5,4,Walkham U/S con Tavy,,Bit of a walk in,,,River Walkham,1,247612,69880,1
 6,5,Grenofen Bridge Weir,, ,,,River Walkham,1,249098,70829,2
@@ -18,48 +18,48 @@ Goggle#,FID,Description,VisitBy,Comments,SpotMon,ContMon,River,Priority,Easting,
 17,16,Withill Farm,, ,,,Unnamed trib of River Walkham,3,254875,72771,1
 18,17,Bedford Road,,Has agricutural but not moorland catchment,,,Unnamed trib of River Walkham,1,251647,69955,1
 19,18,Sewage Works driveway,, ,,,Unnamed trib of River Walkham,1,249946,70487,1
-20,19,FB over Lumburn U/S conf Tavy,, ,,,River Lumburn,1,246628,71734,1
-21,20,Shillamill,, ,,,River Lumburn,1,246652,71947,2
-22,21,Lumburn Bridge,, ,,,River Lumburn,3,245969,73094,1
-23,22,Morwelldown Cannal viaduct Weir,, ,,,River Lumburn,3,246264,72610,2
-24,23,Middle Lumburn Bridge,, ,,,River Lumburn,3,245412,74228,1
-25,24,High Lumburn Bridge,,Just down from quarry and fisheries,,,River Lumburn,2,245275,74673,1
-26,25,Langford Farm,, ,,,Unnamed trib of River Lumburn,3,245830,75810,1
-27,26,Rushford Bridge,, ,,,River Lumburn,3,244954,76319,1
-28,27,Lamerton Bridge,, ,,,River Lumburn,3,244848,76898,1
-29,28,Great Haye Farm track bridge,,Probably too high up stream,,,River Lumburn,3,244682,77764,1
-30,29,Lamerton foot bridge,,Possibly too far upstream,,,Unnamed trib of River Lumburn,3,245152,76871,0
-31,30,Court Barton,,Possibly too far upstream,,,Unnamed trib of River Lumburn,3,245408,77409,1
-32,31,Hawthorn Road Bridge,, ,,,Tiddy Brook,2,248315,72886,0
-33,32,Tiddybrook Barn Bridge,, ,,,Tiddy Brook,2,247802,73056,1
-34,33,Bridge D/S supermarket,, ,,,Tiddy Brook,2,247876,73061,1
-35,34,U/S supermarket,, ,,,Tiddy Brook,2,247969,73051,1
-36,35,Anderton Court foot bridge,, ,,,Unnamed trib of Tiddy Brook,3,249050,72528,1
-37,36,A386 bridge,, ,,,Tiddy Brook,2,248126,72979,1
-38,37,Mulbery Grove Bridge,, ,,,Tiddy Brook,2,248376,72869,1
-39,38,Anderton Lane,, ,,,Unnamed trib of Tiddy Brook,3,248800,72496,1
-40,39,Oak Road,, ,,,Tiddy Brook,2,248510,72798,1
-41,40,Sycamore Avenue foot bridge,, ,,,Tiddy Brook,2,248435,72836,1
-42,41,Whitchurch Road,, ,,,Unnamed trib of Tiddy Brook,3,249355,71790,1
-43,42,Ash Farm,, ,,,Unnamed trib of Tiddy Brook,3,248894,72203,1
-44,43,Anderton Court,, ,,,Unnamed trib of Tiddy Brook,3,249076,72526,1
-45,44,Whitchurch Road,, ,,,Unnamed trib of Tiddy Brook,3,249153,72514,1
-46,45,Burnside,, ,,,Unnamed trib of Tiddy Brook,3,249627,72778,1
-47,46,Shortsland Bridge,, ,,,Unnamed trib of Tiddy Brook,3,249762,72842,0
-48,47,Shorts Land Cottage Bridge,, ,,,Unnamed trib of Tiddy Brook,3,249893,72907,1
+20,19,FB over Lumburn U/S conf Tavy,PB,No obvious access to location could be found.,N,N,River Lumburn,1,246628,71734,1
+21,20,Shillamill,PB,Accessible for spot sampling from bridge (EA does here). Landowner (Shillamill/Buctor) not adverse to monitoring installation here.,Y,Y,River Lumburn,1,246652,71947,1
+22,21,Lumburn Bridge,PB,Accessible for spot sampling from bridge. Next to busy road.,Y,N,River Lumburn,3,245969,73094,1
+23,22,Morwelldown Cannal viaduct Weir,PB,"Cannal monitoring possible - very accessible, but might be worth seeing if we can get access away from footpath as high traffic/shrine. V slow flow. Not possible to monitor main river here.",Y,M,River Lumburn,3,246264,72610,2
+24,23,Middle Lumburn Bridge,PB,SWW have managed Septic tank here - overflows into river often. Lots of infilration into system. Access to water at their tank and monitoring (descriptive only) possible. Could be other monitoring in the area. Couldn't access under bridge to see flow constraint. ,Y,M,River Lumburn,3,245412,74228,1
+25,24,High Lumburn Bridge,PB,Just down from quarry and fisheries. Easy spot sample access. No where immediately obviously rateable. Noticable sudden SS increase - slatey coloured water.,Y,M,River Lumburn,2,245275,74673,1
+26,25,Langford Farm,PB,No access.,N,N,Unnamed trib of River Lumburn,3,245830,75810,1
+27,26,Rushford Bridge,PB,Spot access only.,N,N,River Lumburn,3,244954,76319,1
+28,27,Lamerton Bridge,PB,"Private access upstream, inaccessble downstream. Pole from bridge. Constrained flow upstream if given access.",Y,N,River Lumburn,3,244848,76898,1
+29,28,Great Haye Farm track bridge,PB,"Probably too high up stream. Easy access for spot sample, not great for parking/turning..",Y,N,River Lumburn,3,244682,77764,1
+30,29,Lamerton foot bridge,PB,Possibly too far upstream. Couldn't access.,N,N,Unnamed trib of River Lumburn,3,245152,76871,0
+31,30,Court Barton,PB,"Possibly too far upstream. Tiny, inaccessible.",N,N,Unnamed trib of River Lumburn,3,245408,77409,1
+32,31,Hawthorn Road Bridge,EGC,"3 different culverts, complex",M,N,Tiddy Brook,2,248315,72886,0
+33,32,Tiddybrook Barn Bridge,EGC,"Fast flow, car park, 2 culverts, steep access to river",N,N,Tiddy Brook,2,247802,73056,1
+34,33,Bridge D/S supermarket,EGC,No access to either side of the stream,N,N,Tiddy Brook,2,247876,73061,1
+35,34,U/S supermarket,EGC,"Behind locked gate one side, private garden other side",N,N,Tiddy Brook,2,247969,73051,1
+36,35,Anderton Court foot bridge,EGC,"Cul de sac, private land, contricted",M,N,Unnamed trib of Tiddy Brook,3,249050,72528,1
+37,36,A386 bridge,EGC,"Near car wash, locked access/gate, but could be possible. Next to busy road",M,M,Tiddy Brook,2,248126,72979,1
+38,37,Mulbery Grove Bridge,EGC,"Steep bank, pipe work and private access",,N,Tiddy Brook,2,248376,72869,1
+39,38,Anderton Lane,EGC,Maybe - By a footpath,,M,Unnamed trib of Tiddy Brook,3,248800,72496,1
+40,39,Oak Road,EGC,"Different culverts, complex",,N,Tiddy Brook,2,248510,72798,1
+41,40,Sycamore Avenue foot bridge,EGC,"Steep bank, pipe work and private access but maybe.",,N,Tiddy Brook,2,248435,72836,1
+42,41,Whitchurch Road,EGC,"Difficult access (in field but along very busy road), flooding field",,,Unnamed trib of Tiddy Brook,3,249355,71790,1
+43,42,Ash Farm,EGC,Potential - access to river OK and can walk under bridge. Near foot path,,M,Unnamed trib of Tiddy Brook,3,248894,72203,1
+44,43,Anderton Court,EGC,"Cul de sac, private land, contricted",M,N,Unnamed trib of Tiddy Brook,3,249076,72526,1
+45,44,Whitchurch Road,EGC,Potential - further from bridge on (private) car park one side and allotments other,,M,Unnamed trib of Tiddy Brook,3,249153,72514,1
+46,45,Burnside,EGC,Potential - Private land ,,M,Unnamed trib of Tiddy Brook,3,249627,72778,1
+47,46,Shortsland Bridge,EGC,"Private land, not easy",,N,Unnamed trib of Tiddy Brook,3,249762,72842,0
+48,47,Shorts Land Cottage Bridge,EGC,"Private land, not easy",,N,Unnamed trib of Tiddy Brook,3,249893,72907,1
 49,48,Tavistock Weir,,Possible EA hydrometric site,,,River Tavy,1,248218,74302,2
 50,49,Footbridge at conf with River Tavy,, ,,,Unnamed trib of River Tavy,1,249046,74837,1
 51,50,Pennycomequick,, ,,,Unnamed trib of River Tavy,3,251446,74054,1
 52,51,Mount Tavy Road,, ,,,Unnammed trib of River Tavy,2,249306,74679,1
-53,52,Whitchurch COmmon,, ,,,Unnamed trib of River Tavy,3,250882,74146,1
+53,52,Whitchurch Common,, ,,,Unnamed trib of River Tavy,3,250882,74146,1
 54,53,Taviton Cottages,, ,,,Unnammed trib of River Tavy,2,249486,74797,1
 55,54,Old Exeter Road,, ,,,River Wallabrook,2,249170,75483,0
 56,55,River Wallabrook,, ,,,River Wallabrook,2,249284,75409,1
-57,56,The Willows,, ,,,River Wallabrook,3,247658,78238,1
+57,56,The Willows,PB,"Single arch stone bridge, great access, quite shallow",Y,N,River Wallabrook,3,247658,78238,1
 58,57,Union Mine Road footbridge,, ,,,River Burn,2,249828,76203,1
 59,58,Half Bridge,, ,,,River Burn,2,250229,76655,1
 60,59,Station House,, ,,,River Burn,3,248621,81186,1
-61,60,Burnford,, ,,,River Burn,3,249788,78718,1
+61,60,Burnford,PB,"Single arch stone bridge reasonably constrained flow and accessibe with permission, looks like gets big events with lots of debris risk, couldn't properly check out as assumed private access",Y,M,River Burn,3,249788,78718,1
 62,61,Harford Bridge,NG,"Large 3 arch stone bridge, poorly constrained river, easy access for spot sample via caravan park - Harford Bridge Park",Y,N,River Tavy,3,250577,76759,2
 63,62,Foot bridge D/S Peter Tavy,NG,Prvate Land - could not access,N,N,Colly Brook,3,251038,77617,0
 64,63,Bridge Peter Tavy,NG,Private property Lower Mill - could use for cont. mon as equipment would be secure but would need permission - not as good as FID65,N,N,Colly Brook,3,251326,77616,0
@@ -77,4 +77,4 @@ Goggle#,FID,Description,VisitBy,Comments,SpotMon,ContMon,River,Priority,Easting,
 76,75,Nat Tor,,Where Tavy exists peat/moorland,,,River Tavy,2,254485,82050,1
 77,76,Magpie Bridge,, ,,,River Walkham,2,250342,70360,1
 New Site,77,Peter Tavy Methodist Church,NG,"less constrained but safer access to river, park at village halll and take path round side of church",Y,N,Colly Brook,1,251484,77635,2
-New Site,78,Footbridge at Whiestone Farm,NG,"Park on track next to HydroElectic plant short walk along bridalway to footbridge, river easily accesible but poorly constrained",Y,N,River Tavy,1,251036,78443,1
+New Site,78,Footbridge at Whitestone Farm,NG,"Park on track next to HydroElectic plant short walk along bridalway to footbridge, river easily accesible but poorly constrained",Y,N,River Tavy,1,251036,78443,1
