@@ -1,19 +1,20 @@
-﻿Name,Type,Group,Risk,Lead,Team,Partners,Project_Start,Project_End,Sondes,Pumps,Flow,Stage
-Stithians Reservoir,Scheme,1,"Blue-green algae, geosmin, ammonium, colour, DOC, turbidity",Emilie,"Dave, Donna and Emilie",CWT,01/04/2020,01/04/2025,2,1,0,2
-Wistlandpound Reservoir,Scheme,2,"Blue-green algae, geosmin, MIB",Emilie,"Dave, Donna and Emilie","DWT, NDP",01/04/2020,01/04/2025,5,3,2,4
-Roadford Lake,Scheme,3,"Geosmin, MIB",Emilie,"Dave, Donna and Emilie","DWT, WRT",01/04/2020,01/04/2025,1,1,1,4
-Burrator Reservoir,Scheme,1,DOC,Pia,"Dave, Donna, Josie, Naomi and Pia","SWPP, SWLT",01/04/2020,01/04/2025,7,2,6,6
-Meldon Reservoir,Investigation,1,"DOC, TOC, Manganese",Dave,"Dave, Donna, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,1,1,1,4
-Tavy,Investigation,2,"Geosmin, DOC",Naomi,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,4,4,4,2
-Colliford Lake,Investigation,3,"Geosmin, Manganese (total and dissolved)",Pia,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,0,0,1,2
-Avon Dam Reservoir,Investigation,3,"Geosmin, MIB",Pia,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,1,0,1,2
-Exe,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Otter,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Tamar,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Drift,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Fernworthy,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Cober,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Dart,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Fowey,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-Barnstaple Yeo,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
-College and Argal,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA
+﻿Name,Type,Group,Risk,Lead,Team,Partners,Project_Start,Project_End,Sondes,Pumps,Flow,Stage,Research_Q1,Research_Q2,Research_Q3,Research_Q4,Research_Q5,Research_Q6,WP_1,WP_2,WP_3,WP_4,WP_5,WP_6
+Stithians Reservoir,Scheme,1,"Blue-green algae, geosmin, ammonium, colour, DOC, turbidity",Emilie,"Dave, Donna and Emilie",CWT,01/04/2020,01/04/2025,2,1,0,2,,,,,,,,,,,,
+Wistlandpound Reservoir,Scheme,2,"Blue-green algae, geosmin, MIB",Emilie,"Dave, Donna and Emilie","DWT, NDP",01/04/2020,01/04/2025,5,3,2,4,,,,,,,,,,,,
+Roadford Lake,Scheme,3,"Geosmin, MIB",Emilie,"Dave, Donna and Emilie","DWT, WRT",01/04/2020,01/04/2025,1,1,1,4,,,,,,,,,,,,
+Burrator Reservoir,Scheme,1,DOC,Pia,"Dave, Donna, Josie, Naomi and Pia","SWPP, SWLT",01/04/2020,01/04/2025,7,2,6,6,Identify any significant spatial sources of DOC.,Identify any significant temporal drivers of DOC.,Identify significant flow inputs within the Devonport Leat and River Meavy.,Monitor the impact of habitat restoration and management on DOC concentrations in the Devonport Leat and River Meavy.,Monitor the impact of habitat restoration and management on flow within the Devonport Leat and River Meavy.,,Use historic spot sample and climatic data to identify significant temporally-variable climatic drivers of DOC - GAM analysis.,Use historic and spatial data to build an understanding of potential sources/risk areas for DOC within the catchment - Risk mapping.,Collection and lab analysis of water quality and hydrometric data.,"Analyse our new data to build on our understanding of DOC sources within the catchment, and identify any significant changes following restoration work - source apportionment and change detection.","General play with our data, including curve offsetting algae/DOC sondes.",Contribute to the design of the peatland restoration plan and catchment management measures.
+Meldon Reservoir,Investigation,1,"DOC, TOC, Manganese",Dave,"Dave, Donna, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,1,1,1,4,,,,,,,,,,,,
+Tavy,Investigation,2,"Geosmin, DOC",Naomi,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,4,4,4,2,,,,,,,,,,,,
+Colliford Lake,Investigation,3,"Geosmin, Manganese (total and dissolved)",Pia,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,0,0,1,2,,,,,,,,,,,,
+Avon Dam Reservoir,Investigation,3,"Geosmin, MIB",Pia,"Dave, Emilie, Josie, Naomi and Pia",NA,01/04/2020,01/04/2022,1,0,1,2,Identify any significant spatial sources of geosmin.,Identify any significant temporal drivers of elevated geosmin levels.,Identify any significant spatial sources of MIB levels.,Identify any significant temporal drivers of MIB levels.,,,Use historic spot sample and climatic data to identify significant temporally-variable climatic drivers of geosmin and MIB - GAM analysis.,Use historic spot sample data to identify temporal relationships between water quality parameters - Curve off-setting analysis.,Use historic and spatial data to build an understanding of potential sources/risk areas for geosmin/MIB within the catchment - Risk mapping.,"Collection and lab analysis of water quality, RGB and hydrometric data, including autosampler data when geosmin analysis comes online).",Analyse our new data to build on our understanding of geosmin/MIB sources within the catchment - Source apportionment.,Analyse our new data in combination with SWW WTW data to build an understanding of spatio-temporal drivers of geosmin/MIB.
+Exe,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Otter,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Tamar,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Drift,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Fernworthy,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Cober,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Dart,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Fowey,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Barnstaple Yeo,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+College and Argal,BAU,NA,NA,NA,NA,NA,01/04/2020,01/04/2025,NA,NA,NA,NA,,,,,,,,,,,,
+Exmoor,,,,,,,,,,,,,,,,,,,,,,,,

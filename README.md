@@ -18,5 +18,9 @@ runGitHub( "UST_ShinyMaps", "piabenaud", ref = "main")
 ```
 To do this you will need the following packages, which can be installed by running this code in your R console:
  ```R
- install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2", "sp"))
+ install.packages(c("shiny", "leaflet", "dplyr", "readr", "purrr" "raster", "lubridate", "ggplot2", "sp"))
  ```
+To run the dev version (i.e. with the Tavy potential locations) use:
+install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2"))
+library(shiny)
+runGitHub( "UST_ShinyMaps", "piabenaud", ref = "dev")

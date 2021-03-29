@@ -16,7 +16,7 @@
                     
                     h3("Colour controller"),
                     
-                    selectInput("colour", "Colour Coding", vars),
+                    selectInput("catchment_colour", "Catchment Colour Coding", catchment_vars),
                     
                     h3("Project timeline"),
                     

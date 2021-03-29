@@ -35,6 +35,16 @@ popups <- paste0("<h3>", Catchments$WB_NAME,"</h3>", "<br>",
 popup_temp <- paste0("<b>",BAU_shp$Catchment,"</b>")
 # add wtw info
 
+popup_mon <- paste0("<b>","Coords: ","</b>", Locations$Northing,", ", Locations$Easting, "<br>",
+                     "<b>","Description: ","</b>", Locations$Description, "<br>",
+                     "<b>", "River: ", "</b>", Locations$River,"<br>",
+                     "<b>", "Comments: ", "</b>", Locations$Comments, "<br>",
+                     "<b>", "Visit By: ", "</b>", Locations$VisitBy, "<br>",
+                    "<b>", "Spot Monitoring: ", "</b>", Locations$Spot, "<b>", "Parameters: ", "</b>", Locations$Spot_params,"<br>",
+                    "<b>", "Sonde Monitoring: ", "</b>", Locations$Sonde, "<b>", "Parameters: ", "</b>", Locations$Sonde_params,"<br>",
+                    "<b>", "Pump Sampler: ", "</b>", Locations$Pump, "<b>", "Parameters: ", "</b>", Locations$Pump_params, "<br>",
+                    "<b>", "Stage: ", "</b>", Locations$Stage,"<b>", "Flow: ", "</b>", Locations$Flow, "<br>")
+
 # Let's make a timeline plot -------------------------------------
 
 # Could make this reactive in the future - i.e. as you zoom change to catchments in view
@@ -58,33 +68,32 @@ output$timeline <- renderPlot({
 #pal_test <- c("#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51", "#6b8b8d")
 
 observe({
-  colour_by <- input$colour # First defining the colour palettes for the input (on ui) 'colour'
+  colour_by <- input$catchment_colour # First defining the colour palettes for the input (on ui) 'catchment_colour'
   
   if (colour_by == "Type") {
     colour_group <- Catchments$Type
-    pal <- colorFactor( palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = colour_group)
+    pal1 <- colorFactor( palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = colour_group)
     
   } else if (colour_by == "Lead") {
     colour_group <- Catchments[[colour_by]]
-    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a"), domain= colour_group)
+    pal1 <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a"), domain = colour_group)
     
   } else {
     colour_group <- Catchments[[colour_by]] # i.e. Catchment Group
-    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3"), domain= colour_group)
+    pal1 <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = colour_group)
   }
   
   
   leafletProxy("map") %>%  # Then adding it all to the map
     clearShapes() %>%
     addPolygons(data = BAU_shp, group = "BAU", fillOpacity = 0.5, weight = 0.8, color = "#6b8b8d", popup = popup_temp) %>%
-    addPolygons(data = Catchments, group = "Catchments", fillOpacity = 0.8, weight = 0.8, color = pal(colour_group), popup = popups) %>%
-    #addCircles(data = erosiondata_lowland, group = "Lowland", ~Long, ~Lat, radius = rad_low, layerId=~Site_ID,  # add something like this later for point-based data
-    #           stroke=FALSE, fillOpacity=0.65, fillColor=pal(colorData_low), popup = popup_low) %>%
+    addPolygons(data = Catchments, group = "Catchments", fillOpacity = 0.8, weight = 0.8, color = pal1(colour_group), popup = popups) %>%
+    addCircles(data = Locations, group = "Monitoring", radius = 100, fillOpacity = 0.7, weight = 0.8, fillColor = "gray20", popup = popup_mon, label = ~ID, labelOptions = labelOptions(noHide = T, textsize = "10px", opacity = 0.7)) %>%
     addLayersControl(
       options = layersControlOptions(collapsed = FALSE),
-      overlayGroups = c("Catchments", "BAU"),
+      overlayGroups = c("Catchments", "BAU", "Monitoring"),
       baseGroups = c("Colour", "Gray-scale"),
       position = "topleft") %>% 
-    addLegend("topleft", pal=pal, values=colour_group, layerId="legend")
+    addLegend("topleft", pal = pal1, values = colour_group, layerId = "legend")
   
 })

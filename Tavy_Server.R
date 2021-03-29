@@ -11,6 +11,21 @@ popup_tavy <- paste0("<b>","Coords: ","</b>", Tavy_locs$Northing,", ", Tavy_locs
                      "<b>", "Visit By: ", "</b>", Tavy_locs$VisitBy, "<br>")
 
 output$tavy_map <- renderLeaflet({
+  colour_by <- input$colour # First defining the colour palettes for the input (on ui) 'colour'
+  
+  if (colour_by == "Priority") {
+    colour_group <- Catchments$Priority
+    pal <- colorFactor( palette = c("#1b9e77", "#d95f02", "#7570b3"), domain = colour_group)
+    
+  } else if (colour_by == "Spot Mon") {
+    colour_group <- Catchments[[colour_by]]
+    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3", "#e7298a"), domain= colour_group)
+    
+  } else {
+    colour_group <- Catchments[[colour_by]] # i.e. Catchment Group
+    pal <- colorFactor(palette = c("#1b9e77", "#d95f02", "#7570b3"), domain= colour_group)
+  }
+  
  leaflet() %>%  
     setView(lng = -4.14, lat = 50.54, zoom = 11) %>% 
     addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Colour") %>%
