@@ -9,6 +9,7 @@
 # Load packages -----------------------------------------------------------
 
 library(dplyr)
+library(forcats) # for leveling factor data
 library(readr)
 library(purrr)
 library(raster) # for reading shp files and bind function
@@ -46,6 +47,8 @@ Catchments <- bind(Schemes_shp, Investigations_shp)
 
 Catchments <- merge(Catchments, Delivery, by.x ="WB_NAME", by.y = "Name")
 
+BAU <- merge(BAU_shp, Delivery, by.x = "Catchment", by.y = "Name")
+
 
 # Options for colours -----------------------------------------------------
 
@@ -54,6 +57,12 @@ catchment_vars <- c("Catchment Type" = "Type",
           "Catchment Lead" = "Lead",
           "Catchment Group" = "Group") 
 
+monitoring_vars <- c("All" = "Default", 
+                    "Sondes" = "Sonde",
+                    "Pump Samplers" = "Pump",
+                    "Spot Sampling" = "Spot",
+                    "Flow" = "Flow",
+                    "Stage" = "Stage")
 
 # Today's date for vline on plot -------------------------------------------
 
@@ -82,7 +91,15 @@ df_bng_wgs84 <- function(.data, .easting, .northing){
 
 Locations <- read_csv("Data/UST3_Monitoring_Locations.csv")
 
-Locations <- df_bng_wgs84(Locations, .easting = "Easting", .northing = "Northing")
+Locations <- Locations %>% # ordering factors of option so colour pal consistent
+  mutate(Sonde = Sonde %>% forcats::fct_relevel("Yes", "Maybe", "No"),
+         Spot = Spot %>% forcats::fct_relevel("Yes", "No"),
+         Pump = Pump %>% forcats::fct_relevel("Yes", "No"),
+         Flow = Flow %>% forcats::fct_relevel("Yes", "No"),
+         Stage = Stage %>% forcats::fct_relevel("Yes", "No"))
+
+
+Locations <- df_bng_wgs84(Locations, .easting = "Easting", .northing = "Northing") 
 
 
 # Import and Transform Tavy csv -------------------------------------------------
@@ -96,7 +113,6 @@ rm(Tavy_locs_BNG) # keep things tidy
 
 # Import and tidy EA data -------------------------------------------------------
 
-# 
 # EA_spot_BNG <- readRDS("Data/EA_spot.rds")
 # 
 # EA_tidy <- function(.data){

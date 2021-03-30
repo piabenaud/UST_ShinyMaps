@@ -21,6 +21,6 @@ To do this you will need the following packages, which can be installed by runni
  install.packages(c("shiny", "leaflet", "dplyr", "readr", "purrr" "raster", "lubridate", "ggplot2", "sp"))
  ```
 To run the dev version (i.e. with the Tavy potential locations) use:
-install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2"))
+install.packages(c("shiny", "leaflet", "dplyr", "readr", "raster", "lubridate", "ggplot2", "forcats"))
 library(shiny)
 runGitHub( "UST_ShinyMaps", "piabenaud", ref = "dev")

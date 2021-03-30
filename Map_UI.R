@@ -18,6 +18,8 @@
                     
                     selectInput("catchment_colour", "Catchment Colour Coding", catchment_vars),
                     
+                    selectInput("monitoring_colour", "Monitoring Colour Coding", monitoring_vars),
+                    
                     h3("Project timeline"),
                     
                     plotOutput("timeline", height = 300)
