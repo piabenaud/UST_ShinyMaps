@@ -6,7 +6,7 @@ This is a really basic map, so please let me know any suggestions for things I c
 Current list:
 
 * Include monitoring location markers with details - to be added as and when, will just need a csv with x and y coords for locations and any relevant info.
-* Pop-up plots with EA monitoring data summaries based on determinand selected
+* Pop-up plots with EA monitoring data summaries based on determinand selected on the page
 
 I'll get this running online properly once we're happy with it, but in the mean time, you can run it locally.
 
