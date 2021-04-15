@@ -30,10 +30,26 @@ popups <- paste0("<h3>", Catchments$WB_NAME,"</h3>", "<br>",
                  "<b>","Sondes: ","</b>", Catchments$Sondes, "<br>",
                  "<b>","Pumps: ","</b>", Catchments$Pumps, "<br>",
                  "<b>","Flow: ","</b>", Catchments$Flow, "<br>",
-                 "<b>","Stage: ","</b>", Catchments$Stage, "<br>"
-                 )
+                 "<b>","Stage: ","</b>", Catchments$Stage, "<br>",
+                 "<b>","Research Questions: ","</b>","<br>",
+                 "<b>","1) ","</b>", Catchments$Research_Q1, "<br>",
+                 "<b>","2) ","</b>", Catchments$Research_Q2, "<br>",
+                 "<b>","3) ","</b>", Catchments$Research_Q3, "<br>",
+                 "<b>","4) ","</b>", Catchments$Research_Q4, "<br>",
+                 "<b>","5) ","</b>", Catchments$Research_Q5, "<br>",
+                 "<b>","6) ","</b>", Catchments$Research_Q6, "<br>",
+                 "<b>","Work Packages: ","</b>","<br>",
+                 "<b>","1) ","</b>", Catchments$WP_1, "<br>",
+                 "<b>","2) ","</b>", Catchments$WP_2, "<br>",
+                 "<b>","3) ","</b>", Catchments$WP_3, "<br>",
+                 "<b>","4) ","</b>", Catchments$WP_4, "<br>",
+                 "<b>","5) ","</b>", Catchments$WP_5, "<br>",
+                 "<b>","6) ","</b>", Catchments$WP_6, "<br>",
+                 "<b>","7) ","</b>", Catchments$WP_7, "<br>")
 
-popup_temp <- paste0("<b>",BAU$Catchment,"</b>")
+popup_temp <- paste0("<h3>", BAU$Catchment,"</h3>", "<br>",
+                     "<b>","Research Questions: ","</b>","<br>",
+                     "<b>","1) ","</b>", Catchments$Research_Q1, "<br>")
 # add wtw info
 
 popup_mon <- paste0("<b>","Coords: ","</b>", Locations$Northing,", ", Locations$Easting, "<br>",
@@ -41,9 +57,15 @@ popup_mon <- paste0("<b>","Coords: ","</b>", Locations$Northing,", ", Locations$
                      "<b>", "River: ", "</b>", Locations$River,"<br>",
                      "<b>", "Comments: ", "</b>", Locations$Comments, "<br>",
                      "<b>", "Visit By: ", "</b>", Locations$VisitBy, "<br>",
-                    "<b>", "Spot Monitoring: ", "</b>", Locations$Spot, "<b>", " Parameters: ", "</b>", Locations$Spot_params,"<br>",
-                    "<b>", "Sonde Monitoring: ", "</b>", Locations$Sonde, "<b>", " Parameters: ", "</b>", Locations$Sonde_params,"<br>",
-                    "<b>", "Pump Sampler: ", "</b>", Locations$Pump, "<b>", " Parameters: ", "</b>", Locations$Pump_params, "<br>",
+                    "<b>", "Spot Monitoring: ", "</b>", Locations$Spot, "<b>", "<br>",
+                    " Parameters: ", "</b>", Locations$Spot_params,"<br>",
+                    "<br>",
+                     "<b>", "Sonde Monitoring: ", "</b>", Locations$Sonde, "<b>", "<br>",
+                    " Parameters: ", "</b>", Locations$Sonde_params,"<br>",
+                    "<br>",
+                    "<b>", "Pump Sampler: ", "</b>", Locations$Pump, "<b>",  "<br>",
+                    " Parameters: ", "</b>", Locations$Pump_params, "<br>",
+                    "<br>",
                     "<b>", "Stage: ", "</b>", Locations$Stage,"<b>", " Flow: ", "</b>", Locations$Flow, "<br>")
 
 # Let's make a timeline plot -------------------------------------
