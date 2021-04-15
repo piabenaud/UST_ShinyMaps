@@ -57,6 +57,7 @@ popup_mon <- paste0("<b>","Coords: ","</b>", Locations$Northing,", ", Locations$
                      "<b>", "River: ", "</b>", Locations$River,"<br>",
                      "<b>", "Comments: ", "</b>", Locations$Comments, "<br>",
                      "<b>", "Visit By: ", "</b>", Locations$VisitBy, "<br>",
+                    "<br>",
                     "<b>", "Spot Monitoring: ", "</b>", Locations$Spot, "<b>", "<br>",
                     " Parameters: ", "</b>", Locations$Spot_params,"<br>",
                     "<br>",
