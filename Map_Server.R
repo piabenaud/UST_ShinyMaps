@@ -49,7 +49,7 @@ popups <- paste0("<h3>", Catchments$WB_NAME,"</h3>", "<br>",
 
 popup_temp <- paste0("<h3>", BAU$Catchment,"</h3>", "<br>",
                      "<b>","Research Questions: ","</b>","<br>",
-                     "<b>","1) ","</b>", Catchments$Research_Q1, "<br>")
+                     "<b>","1) ","</b>", BAU$Research_Q1, "<br>")
 # add wtw info
 
 popup_mon <- paste0("<b>","Coords: ","</b>", Locations$Northing,", ", Locations$Easting, "<br>",
